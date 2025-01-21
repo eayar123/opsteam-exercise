@@ -12,11 +12,11 @@ spec:
       labels:
         app: filebeat
     spec:
-      serviceAccountName: filebeat  # Ensure RBAC is set up (adjust if necessary)
+      serviceAccountName: filebeat
       containers:
       - name: filebeat
         image: elastic/filebeat:7.17.27
-        args: ["-e", "-strict.perms=false"]  # Ensures Filebeat runs even with relaxed permissions
+        args: ["-e", "-strict.perms=false"]
         env:
         - name: ELASTICSEARCH_HOST
           value: "http://elasticsearch.logging.svc.cluster.local:9200"
