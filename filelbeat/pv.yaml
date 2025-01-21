@@ -2,8 +2,10 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: filebeat-logs-pv
-  namespace: logging
+  labels:
+    type: filebeat-logs
 spec:
+  storageClassName: ""
   capacity:
     storage: 5Gi
   accessModes:

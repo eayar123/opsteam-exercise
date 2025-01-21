@@ -4,6 +4,10 @@ metadata:
   name: filebeat-logs-pvc
   namespace: logging
 spec:
+  storageClassName: ""
+  selector:
+    matchLabels:
+      type: filebeat-logs
   accessModes:
     - ReadWriteOnce
   resources:
